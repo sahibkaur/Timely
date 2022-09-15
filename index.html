@@ -1,154 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Timely</title>
-</head>
-<body>
-<div class="container">
-    <div class="time">
+  </head>
+  <body>
+    <div class="container">
+      <div class="time">
         <div class="hours">
-            <div class="segment digit">
-            </div>
-            <div class="segment digit">
-
-            </div>
+          <div class="segment-container">
+            <div class="segment digit" id="test"></div>
+            <div class="segment digit"></div>
+          </div>
         </div>
         <div class="minutes">
-            <div class="segment digit">
+          <div class="segment-container">
+            <div class="segment digit"></div>
+            <div class="segment digit"></div>
+          </div>
+        </div>
 
-            </div>
-            <div class="segment digit">
-
-            </div>
-        </div>    
-        
         <div class="seconds">
-                <div class="segment digit">
-    
-                </div>
-                <div class="segment digit">
-
-                </div>
+          <div class="segment-container">
+            <div class="segment digit"></div>
+            <div class="segment digit"></div>
+          </div>
         </div>
         <div class="ampm">
-            <div class="segment ap-part">
-
-            </div>
-            <div class="segment m-part">
-
-            </div>
-
+          <div class="segment ap-part"></div>
+          <div class="segment m-part"></div>
         </div>
+      </div>
     </div>
-</div>
     <script>
-
-        const digits = document.getElementsByClassName('digit');
-        const ap = document.querySelector('.ap-part');
-        const mm = document.querySelector('.m-part');    
-        
-        const eightHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="left-line l-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="left-line l-2"></div>
-            <div class="right-line l-2"></div>
-            <div class="flat-line fl-2"></div>
-        `;
-        const oneHTML = `
-            <div class="right-line l-1"></div>
-            <div class="right-line l-2"></div>
-        `;
-        const twoHTML=   `
-            <div class="flat-line fl-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="left-line l-2"></div>
-            <div class="flat-line fl-2"></div>
-        `;
-        const threeHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="right-line l-2"></div>
-            <div class="flat-line fl-2"></div>
-        `; 
-        const fourHTML = `
-            <div class="left-line l-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="right-line l-2"></div>
-        `;    
-        const fiveHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="left-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="right-line l-2"></div>
-            <div class="flat-line fl-2"></div>
-        `;   
-        const sixHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="left-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="left-line l-2"></div>
-            <div class="right-line l-2"></div>
-            <div class="flat-line fl-2"></div>
-        `;
-        const sevenHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="right-line l-2"></div>
-        `;
-        const nineHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="left-line l-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="right-line l-2"></div>
-            <div class="flat-line fl-2"></div>
-        `;
-        const zeroHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="left-line l-1"></div>
-            <div class="left-line l-2"></div>
-            <div class="right-line l-1"></div>
-            <div class="right-line l-2"></div>
-            <div class="flat-line fl-2"></div>
-        `;
-
-        const numberArr = [zeroHTML, oneHTML, twoHTML, threeHTML, fourHTML, fiveHTML, sixHTML, sevenHTML, eightHTML, nineHTML, ]
-
-        const amHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="left-line l-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="left-line l-2"></div>
-            <div class="right-line l-2"></div>
-
-        `;
-        const pmHTML = `
-            <div class="flat-line fl-1"></div>
-            <div class="left-line l-1"></div>
-            <div class="right-line l-1"></div>
-            <div class="middle-line ml-2"></div>
-            <div class="middle-line ml-1"></div>
-            <div class="left-line l-2"></div>
-        `;
-        const mHTML = `
+      const digits = document.getElementsByClassName("digit");
+      const ap = document.querySelector(".ap-part");
+      const mm = document.querySelector(".m-part");
+      
+      const mHTML = `
             <div class="flat-line fl-1"></div>
             <div class="left-line l-1"></div>
             <div class="right-line l-1"></div>
@@ -159,45 +51,133 @@
 
         `;
 
-        ap.innerHTML = amHTML;
-        mm.innerHTML = mHTML;
-        /*
-        * @param {Date} date 
-        */
+      const digitHTML = `
+            <div class="flat-line fl-1"></div>
+            <div class="right-line rl-1"></div>
+            <div class="right-line rl-2"></div>
+            <div class="flat-line fl-2"></div>
+            <div class="left-line l-2"></div>
+            <div class="left-line l-1"></div>
+            <div class="middle">
+                <div class="middle-line ml-2"></div>
+                <div class="middle-line ml-1"></div>
+            </div>
+        `;
 
+      mm.innerHTML = mHTML;
+      /*
+       * @param {Date} date
+       */
 
-        const formatTime = (date) => {
-            const hours12 = date.getHours() %12 || 12;
-            const minutes = date.getMinutes();
-            const seconds = date.getSeconds();
-            const isAm = date.getHours() < 12;
-            if (isAm) {
-                ap.innerHTML = amHTML;
-            } else {
-                ap.innerHTML = pmHTML;
-            }
-
-            return parseInt(`${hours12.toString().padStart(2, "0")}${minutes.toString().padStart(2, "0")}${seconds.toString().padStart(2, "0")}`);
-
-
-            // return `${hours12.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${isAm?"AM":"PM"}`;
-
+      const addDigit = () => {
+        let i = 0;
+        while (i < digits.length) {
+          digits[i].innerHTML = digitHTML;
+          i++;
         }
-        
-        setInterval(() => {
-            const now = new Date();
-            let time = formatTime(now);
-            let i = 5;
-            while (time>0) {
-                rem = parseInt(time%10);
-                time = time/10;
-                digits[i].innerHTML = numberArr[rem];
-                i--;
-            }
+      };
 
-            // timeElement.textContent = formatTime(now);
-        }, 200);
+      addDigit();
+
+      const addHideClass = (divArr, indexArr) => {
+        indexArr.forEach((index) => {
+            divArr[index].classList.add("hide");
+        })
+      }
+
+      const DigitsTransformation = (number, divHTML) => {
+        const childArray = divHTML.children;
+        let indexArr = [];
+        switch (number) {
+          case 1:
+            divHTML.innerHTML = digitHTML;
+            indexArr = [0,3,4,5,6];
+            addHideClass(childArray, indexArr);
+            break;
+          case 2:
+            divHTML.innerHTML = digitHTML;
+            indexArr = [2, 5];
+            addHideClass(childArray, indexArr);
+            break;
+          case 3:
+            divHTML.innerHTML = digitHTML;
+            indexArr = [4, 5];
+            addHideClass(childArray, indexArr);
+            break;
+          case 4:
+            divHTML.innerHTML = digitHTML;
+            indexArr = [0, 3, 4];
+            addHideClass(childArray, indexArr);
+            break;
+          case 5:
+            divHTML.innerHTML = digitHTML;
+            indexArr = [1, 4];
+            addHideClass(childArray, indexArr);
+            break;
+          case 6:
+            divHTML.innerHTML = digitHTML;
+            indexArr = [1];
+            addHideClass(childArray, indexArr);
+            break;
+          case 7:
+            divHTML.innerHTML = digitHTML;
+            indexArr = [3,4,5,6];
+            addHideClass(childArray, indexArr);
+            break;
+          case 8:
+            divHTML.innerHTML = digitHTML;
+            break;
+          case 9:
+            divHTML.innerHTML = digitHTML;            
+            indexArr = [4];
+            addHideClass(childArray, indexArr);
+            break;
+          case 0:
+            divHTML.innerHTML = digitHTML;            
+            indexArr = [6];
+            addHideClass(childArray, indexArr);
+            break;
+          default:
+            break;
+        }
+      };
+
+      const formatTime = (date) => {
+        const hours12 = date.getHours() % 12 || 12;
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        const isAm = date.getHours() < 12;
+        let childArray =  ap.children;
+        if (isAm) {
+            ap.innerHTML = digitHTML;
+            indexArr = [3];
+            addHideClass(childArray, indexArr);
+        } else {
+            ap.innerHTML = digitHTML;            
+            indexArr = [2, 3];
+            addHideClass(childArray, indexArr);
+        }
+
+        return parseInt(
+          `${hours12.toString().padStart(2, "0")}${minutes
+            .toString()
+            .padStart(2, "0")}${seconds.toString().padStart(2, "0")}`
+        );
+
+        // return `${hours12.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${isAm?"AM":"PM"}`;
+      };
+
+      setInterval(() => {
+        const now = new Date();
+        let time = formatTime(now);
+        let i = 5;
+        while (time > 0) {
+          rem = parseInt(time % 10);
+          time = time / 10;
+          DigitsTransformation(rem, digits[i]);
+          i--;
+        }
+      }, 200);
     </script>
-    
-</body>
+  </body>
 </html>

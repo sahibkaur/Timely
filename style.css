@@ -1,5 +1,11 @@
+/* :root {
+    --X: 10%;
+    --Y: 15%;
+    --Z: 30%;
+} */
+
 body {
-    background-color: #222;
+    background-color: #2a2f38;
 }
 .container {
     display: flex;
@@ -11,18 +17,25 @@ body {
 .time {
     display: flex;
     justify-content: space-between;
-    width: 1200px;
+    width: 1400px;
     margin: 0 auto;
 }
 .segment {
     margin: 0 auto;
-    margin-top: 30px;
     width:70px;
     height: 140px;
     background-color: black;
     padding: 10px;
     display: inline-block;
     position: relative;
+}
+
+.segments {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .m-part {
@@ -56,10 +69,10 @@ body {
     position: absolute;
     left:10px;
 }
-.l-1 {
+.l-1, .rl-1 {
     top:15px; 
 }
-.l-2 {
+.l-2, .rl-2 {
     top:80px; 
 }
 
@@ -95,4 +108,7 @@ body {
 .ml-1 {
     border-top: 2.5px solid #f11502;
     top:77.5px;
+}
+.hide {
+    display:none;
 }
